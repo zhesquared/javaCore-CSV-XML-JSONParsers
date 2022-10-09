@@ -8,6 +8,7 @@ public class Main {
         String fileNameForJSONFromXml = "data2.json";
         String fileNameForXml = "data.xml";
 
+
         List<Employee> list = CsvToJson.parseCSV(columnMapping, fileNameForCsv);
         String json = CsvToJson.listToJson(list);
         CsvToJson.writeString(json, fileNameForJSON);
@@ -15,6 +16,9 @@ public class Main {
         List<Employee> xmlList = XmlToJson.parseXml(fileNameForXml);
         String xml = CsvToJson.listToJson(xmlList);
         CsvToJson.writeString(xml, fileNameForJSONFromXml);
+
+        String jsonForParsing = JsonParser.readString(fileNameForJSON);
+        JsonParser.jsonToList(json).forEach(System.out::println);
 
     }
 }
