@@ -1,5 +1,6 @@
 /.idea
 /.gradle
 / src//test
-.bat
+gradlew
+gradlew.bat
 
